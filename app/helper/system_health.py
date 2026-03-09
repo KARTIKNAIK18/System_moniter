@@ -17,7 +17,7 @@ logger = logging.getLogger('SystemMonitor')
 class SystemMonitor:
     
     def __init__(self, check_interval=5):
-        
+
         self.check_interval = check_interval
         self.running = False
         self.monitor_thread = None
@@ -47,7 +47,7 @@ class SystemMonitor:
         return info
     
     def get_cpu_info(self):
-        cpu_percent = psutil.cpu_percent(interval=1)
+        cpu_percent = psutil.cpu_percent()
         cpu_count_physical = psutil.cpu_count(logical=False)
         cpu_count_logical = psutil.cpu_count(logical=True)
         cpu_freq = psutil.cpu_freq()
